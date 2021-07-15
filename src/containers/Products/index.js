@@ -1,5 +1,3 @@
-import React, { useContext } from 'react';
-
 import { Container } from './styles.js';
 
 import { useStore } from '../../hooks-store/store';
