@@ -2,15 +2,15 @@ import React, { useContext } from 'react';
 
 import { Container } from './styles.js';
 
+import { useStore } from '../../hooks-store/store';
+
 import ProductItem from '../components/Products/ProductItem';
 
-import { ProductsContext } from '../../context/ProductsContext';
-
 export function Products(props) {
-  const productList = useContext(ProductsContext).products;
+  const state = useStore()[0];
   return (
     <Container>
-      {productList.map(prod => (
+      {state.products.map(prod => (
         <ProductItem
           key={prod.id}
           id={prod.id}
