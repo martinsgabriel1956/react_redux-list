@@ -1,13 +1,19 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
 
-import { Home } from './pages/Home';
+import { Navigation } from "./components/Nav/Navigation";
+import { Products } from "./containers/Products";
+import { Favorites } from "./containers/Favorites";
 
 export function Routes() {
-  return(
-    <BrowserRouter>
+  return (
+    <>
+      <Navigation />
       <Switch>
-        <Route path="/" component={Home} />
-      </Switch>  
-    </BrowserRouter>
+        <main>
+          <Route path="/" component={Products} />
+          <Route path="/favorites" component={Favorites} />
+        </main>
+      </Switch>
+    </>
   );
 }
